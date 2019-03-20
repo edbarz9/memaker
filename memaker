@@ -2,6 +2,9 @@
 import json
 from PIL import Image, ImageDraw, ImageFont
 
+imgpath = "img/drake_800x800.png"
+outputname = "meme.png"
+
 fn = "img/drake_800x800.json"
 data = open(fn).read()
 data = json.loads(data)
@@ -11,8 +14,6 @@ ta = data['text_areas']
 for a in ta:
     print(a)
 
-imgpath = "img/drake_800x800.png"
-
 image = Image.open(imgpath)
 
-image.save('meme.png')
+image.save(outputname)
