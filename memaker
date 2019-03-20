@@ -19,14 +19,17 @@ ta = data['text_areas']
 message = ["hello","memaker"]
 
 class TextArea:
-    def __init__(self, x1, y1, x2, y2):
-        self.x1 = x1
-        self.y1 = y1
-        self.x2 = x2
-        self.y2 = y2
+    def __init__(self, textAreaData):
+        self.x1 = textAreaData[0]
+        self.y1 = textAreaData[1]
+        self.x2 = textAreaData[2]
+        self.y2 = textAreaData[3]
 
 image = Image.open(imgpath)
 draw = ImageDraw.Draw(image)
+
+def drawText(m, textAreaData):
+    textArea = TextArea(textAreaData)
 
 #draw.text(xy=(20,20),text="yolo",fill=(0,0,0),font=font)
 
