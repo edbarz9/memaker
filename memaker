@@ -28,6 +28,9 @@ class TextArea:
         self.y2 = textAreaData[3]
         self.message = message
 
+    def maxCharPerLine(self):
+        return int((self.x2 - self.x1) / font_width)
+
     def setx(self):
         return self.x1
 
