@@ -1,1 +1,8 @@
 #!/usr/bin/python3
+from PIL import Image, ImageDraw, ImageFont
+
+imgpath = "img/drake_800x800.png"
+
+image = Image.open(imgpath)
+
+image.save('meme.png')
