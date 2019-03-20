@@ -11,6 +11,8 @@ data = json.loads(data)
 
 ta = data['text_areas']
 
+message = ["hello","memaker"]
+
 class TextArea:
     def __init__(self, x1, y1, x2, y2):
         self.x1 = x1
@@ -18,9 +20,9 @@ class TextArea:
         self.x2 = x2
         self.y2 = y2
 
-for a in ta:
-    print(a)
-
 image = Image.open(imgpath)
+
+for i, a in enumerate(ta):
+    print(message[i] + " " + str(a))
 
 image.save(outputname)
