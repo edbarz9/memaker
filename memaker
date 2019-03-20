@@ -2,10 +2,11 @@
 import json
 from PIL import Image, ImageDraw, ImageFont
 
-imgpath = "img/drake_800x800.png"
 outputname = "meme.png"
 
+imgpath = "img/drake_800x800.png"
 fn = "img/drake_800x800.json"
+
 data = open(fn).read()
 data = json.loads(data)
 
