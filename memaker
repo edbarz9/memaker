@@ -2,7 +2,7 @@
 import json
 from PIL import Image, ImageDraw, ImageFont
 
-fn = "drake_800x800.json"
+fn = "img/drake_800x800.json"
 data = open(fn).read()
 data = json.loads(data)
 
