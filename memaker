@@ -18,7 +18,7 @@ data = json.loads(data)
 
 ta = data['text_areas']
 
-message = ["hello","long message tha will not fit on a single line"]
+message = ["hello","long message that will not fit on a single line"]
 
 class TextArea:
     def __init__(self, textAreaData, message):
@@ -61,7 +61,9 @@ class TextArea:
         return x
 
     def sety(self):
-        return self.y1
+        y = self.y1 + (self.y2 - self.y1)/2
+        y -= (self.line_amount) * font_height
+        return y
 
 
 image = Image.open(imgpath)
