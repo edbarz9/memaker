@@ -18,7 +18,7 @@ data = json.loads(data)
 
 ta = data['text_areas']
 
-message = ["hello","memes"]
+message = ["hello","long message tha will not fit on a single line"]
 
 class TextArea:
     def __init__(self, textAreaData):
