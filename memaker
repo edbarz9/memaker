@@ -22,10 +22,10 @@ message = ["hello","long message tha will not fit on a single line"]
 
 class TextArea:
     def __init__(self, textAreaData, message):
-        self.x1 = textAreaData[0]
-        self.y1 = textAreaData[1]
-        self.x2 = textAreaData[2]
-        self.y2 = textAreaData[3]
+        self.x1 = textAreaData[0] + 10
+        self.y1 = textAreaData[1] + 10
+        self.x2 = textAreaData[2] - 10
+        self.y2 = textAreaData[3] - 10
         self.message = message
 
     def maxCharPerLine(self):
