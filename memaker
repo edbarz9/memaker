@@ -28,9 +28,12 @@ class TextArea:
 image = Image.open(imgpath)
 draw = ImageDraw.Draw(image)
 
-draw.text(xy=(20,20),text="yolo",fill=(0,0,0),font=font)
+#draw.text(xy=(20,20),text="yolo",fill=(0,0,0),font=font)
 
 for i, a in enumerate(ta):
-    print(message[i] + " " + str(a))
+    x = a[0]
+    y = a[1]
+    m = message[i]
+    draw.text(xy=(x,y),text=m,fill=(0,0,0),font=font)
 
 image.save(outputname)
