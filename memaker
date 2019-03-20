@@ -4,6 +4,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 outputname = "meme.png"
 
+font = "font/Envy.ttf"
+font_size = 50
+
 imgpath = "img/drake_800x800.png"
 fn = "img/drake_800x800.json"
 
