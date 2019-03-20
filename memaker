@@ -38,7 +38,24 @@ class TextArea:
         return self.y1
 
     def getText(self):
-        return self.message
+        limit = self.maxCharPerLine()
+        tsplit = self.message.split()
+        l = 0
+        t = [""]
+        text = ""
+        for i, w in enumerate(tsplit):
+            if ((len(t[l]) + len(w)) < limit + 1):
+                t[l] = t[l] + w + " "
+            else:
+                t[l] = t[l] + "\n"
+                l = l + 1
+                t.append(w + " ")
+
+        for i in t:
+            text = text + i
+        self.line_amount = l
+
+        return text
 
 image = Image.open(imgpath)
 draw = ImageDraw.Draw(image)
