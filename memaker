@@ -21,11 +21,12 @@ ta = data['text_areas']
 message = ["hello","long message tha will not fit on a single line"]
 
 class TextArea:
-    def __init__(self, textAreaData):
+    def __init__(self, textAreaData, message):
         self.x1 = textAreaData[0]
         self.y1 = textAreaData[1]
         self.x2 = textAreaData[2]
         self.y2 = textAreaData[3]
+        self.message = message
 
     def setx(self):
         return self.x1
@@ -33,16 +34,18 @@ class TextArea:
     def sety(self):
         return self.y1
 
+    def getText(self):
+        return self.message
+
 image = Image.open(imgpath)
 draw = ImageDraw.Draw(image)
 
 def drawText(m, textAreaData):
-    textArea = TextArea(textAreaData)
+    textArea = TextArea(textAreaData, m)
     draw.text(
-        xy=(textArea.setx(),
-        textArea.sety()),
-        text=m,fill=(0,0,0),
-        font=font)
+        xy=(textArea.setx(),textArea.sety()),
+        text=textArea.getText(),
+        fill=(0,0,0),font=font)
 
 for i, a in enumerate(ta):
     m = message[i]
