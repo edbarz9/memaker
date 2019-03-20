@@ -18,7 +18,7 @@ data = json.loads(data)
 
 ta = data['text_areas']
 
-message = ["hello\nhello","OOP"]
+message = ["hello","memes"]
 
 class TextArea:
     def __init__(self, textAreaData):
@@ -38,7 +38,11 @@ draw = ImageDraw.Draw(image)
 
 def drawText(m, textAreaData):
     textArea = TextArea(textAreaData)
-    draw.text(xy=(textArea.setx(),textArea.sety()),text=m,fill=(0,0,0),font=font)
+    draw.text(
+        xy=(textArea.setx(),
+        textArea.sety()),
+        text=m,fill=(0,0,0),
+        font=font)
 
 for i, a in enumerate(ta):
     m = message[i]
