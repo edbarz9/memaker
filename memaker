@@ -6,6 +6,8 @@ outputname = "meme.png"
 
 font_path = "font/Envy.ttf"
 font_size = 50
+font_width = 27
+font_height = 51
 font = ImageFont.truetype(font_path,font_size)
 
 imgpath = "img/drake_800x800.png"
@@ -16,7 +18,7 @@ data = json.loads(data)
 
 ta = data['text_areas']
 
-message = ["hello","OOP"]
+message = ["hello\nhello","OOP"]
 
 class TextArea:
     def __init__(self, textAreaData):
