@@ -26,6 +26,9 @@ class TextArea:
         self.y2 = y2
 
 image = Image.open(imgpath)
+draw = ImageDraw.Draw(image)
+
+draw.text(xy=(20,20),text="yolo",fill=(0,0,0),font=font)
 
 for i, a in enumerate(ta):
     print(message[i] + " " + str(a))
