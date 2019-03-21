@@ -68,8 +68,6 @@ class TextArea:
         lNdd = self.line_amount
         y = ((lAvlbl / 2) - (0.5 + lNdd/2)) * font_height
         y += self.y1
-        #y = self.y1 + (self.y2 - self.y1)/2 - font_height/2
-        #y -= (self.line_amount + 1) * font_height
         return y
 
 
