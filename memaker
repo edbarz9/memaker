@@ -10,8 +10,10 @@ font_width = 27
 font_height = 51
 font = ImageFont.truetype(font_path,font_size)
 
-imgpath = "img/drake_800x800.png"
-fn = "img/drake_800x800.json"
+template = "drake_800x800"
+
+imgpath = "img/" + template + ".png"
+fn = "img/" + template + ".json"
 
 data = open(fn).read()
 data = json.loads(data)
