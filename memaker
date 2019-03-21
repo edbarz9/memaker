@@ -20,7 +20,7 @@ data = json.loads(data)
 
 ta = data['text_areas']
 
-message = ["IE or Safari","Google Chrome","Firefox", "Waterfox + Vimfx extension that plus bla bla bla bla bla bla is no longer available", "qutebrowser", "surf", "w3m", "wget + vim"]
+message = ["IE or Safari","Google Chrome","Firefox", "Waterfox + Vimfx extension that is no longer available", "qutebrowser", "surf", "w3m", "wget + vim"]
 
 class TextArea:
     def __init__(self, textAreaData, message):
@@ -63,8 +63,13 @@ class TextArea:
         return x
 
     def sety(self):
-        y = self.y1 + (self.y2 - self.y1 + font_height)/2
-        y -= (self.line_amount - 1) * font_height
+        taYsize = self.y2 - self.y1
+        lAvlbl = taYsize / font_height
+        lNdd = self.line_amount
+        y = ((lAvlbl / 2) - (0.5 + lNdd/2)) * font_height
+        y += self.y1
+        #y = self.y1 + (self.y2 - self.y1)/2 - font_height/2
+        #y -= (self.line_amount + 1) * font_height
         return y
 
 
