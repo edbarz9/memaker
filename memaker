@@ -10,7 +10,7 @@ font_width = 27
 font_height = 51
 font = ImageFont.truetype(font_path,font_size)
 
-template = "drake_800x800"
+template = "brain4"
 
 imgpath = "img/" + template + ".png"
 fn = "img/" + template + ".json"
@@ -20,7 +20,7 @@ data = json.loads(data)
 
 ta = data['text_areas']
 
-message = ["hello","long message that will not fit on a single line"]
+message = ["IE or Safari","Google Chrome","Firefox", "Waterfox + Vimfx extension that plus bla bla bla bla bla bla is no longer available", "qutebrowser", "surf", "w3m", "wget + vim"]
 
 class TextArea:
     def __init__(self, textAreaData, message):
@@ -63,8 +63,8 @@ class TextArea:
         return x
 
     def sety(self):
-        y = self.y1 + (self.y2 - self.y1)/2
-        y -= (self.line_amount) * font_height
+        y = self.y1 + (self.y2 - self.y1 + font_height)/2
+        y -= (self.line_amount - 1) * font_height
         return y
 
 
