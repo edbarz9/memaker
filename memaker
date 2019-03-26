@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 import json
+import os
 from PIL import Image, ImageDraw, ImageFont
 
 outputname = "meme.png"
+template_path = "img"
 
 font_path = "font/Envy.ttf"
 font_size = 50
@@ -11,6 +13,15 @@ font_height = 51
 font = ImageFont.truetype(font_path,font_size)
 
 template = "brain4"
+
+avlbTmplt = []
+for root, dirs, files in os.walk(template_path,topdown=True):
+    for name in files:
+        if ".json" in name:
+            avlbTmplt.append(name.replace('.json',''))
+avlbTmplt = sorted(avlbTmplt)
+
+quit()
 
 imgpath = "img/" + template + ".png"
 fn = "img/" + template + ".json"
