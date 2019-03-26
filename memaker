@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import json
 import os
+import sys
 from PIL import Image, ImageDraw, ImageFont
 
 outputname = "meme.png"
@@ -14,13 +15,23 @@ font = ImageFont.truetype(font_path,font_size)
 
 template = "brain4"
 
+usageTemplates = ""
 avlbTmplt = []
 for root, dirs, files in os.walk(template_path,topdown=True):
     for name in files:
         if ".json" in name:
             avlbTmplt.append(name.replace('.json',''))
 avlbTmplt = sorted(avlbTmplt)
+for t in avlbTmplt:
+    usageTemplates += "\n\t" + t
 
+usage = 'memaker <template> "first text" "second text" ...\navailable templates are:' + usageTemplates
+
+def checkArgs():
+    if len(sys.argv) == 1:
+        print(usage)
+
+checkArgs()
 quit()
 
 imgpath = "img/" + template + ".png"
