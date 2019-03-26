@@ -104,7 +104,10 @@ def drawText(m, textAreaData):
         text=text,fill=(0,0,0),font=font)
 
 for i, a in enumerate(ta):
-    m = message[i]
+    try:
+        m = message[i]
+    except:
+        m = ""
     drawText(m,a)
 
 image.save(outputname)
