@@ -30,8 +30,13 @@ usage = 'memaker <template> "first text" "second text" ...\navailable templates 
 def checkArgs():
     if len(sys.argv) == 1:
         print(usage)
+        quit()
+    if sys.argv[1] in avlbTmplt:
+        global template
+        template = sys.argv[1]
 
 checkArgs()
+print(template)
 quit()
 
 imgpath = "img/" + template + ".png"
