@@ -48,7 +48,6 @@ def checkArgs():
 checkArgs()
 print(template)
 print(message)
-quit()
 
 imgpath = "img/" + template + ".png"
 fn = "img/" + template + ".json"
