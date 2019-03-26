@@ -13,7 +13,8 @@ font_width = 27
 font_height = 51
 font = ImageFont.truetype(font_path,font_size)
 
-template = "brain4"
+template = ""
+message = []
 
 usageTemplates = ""
 avlbTmplt = []
@@ -25,7 +26,7 @@ avlbTmplt = sorted(avlbTmplt)
 for t in avlbTmplt:
     usageTemplates += "\n\t" + t
 
-usage = 'memaker <template> "first text" "second text" ...\navailable templates are:' + usageTemplates
+usage = 'usage:\n\tmemaker <template> "first text" "second text" ...\n\navailable templates are:' + usageTemplates
 
 def checkArgs():
     if len(sys.argv) == 1:
@@ -34,9 +35,19 @@ def checkArgs():
     if sys.argv[1] in avlbTmplt:
         global template
         template = sys.argv[1]
+    else:
+        print(usage)
+        quit()
+    if len(sys.argv) > 2:
+        global message
+        message = sys.argv[2:]
+    else:
+        print("text is missing")
+        quit()
 
 checkArgs()
 print(template)
+print(message)
 quit()
 
 imgpath = "img/" + template + ".png"
@@ -47,7 +58,6 @@ data = json.loads(data)
 
 ta = data['text_areas']
 
-message = ["IE or Safari","Google Chrome","Firefox", "Waterfox + Vimfx extension that is no longer available", "qutebrowser", "surf", "w3m", "wget + vim"]
 
 class TextArea:
     def __init__(self, textAreaData, message):
